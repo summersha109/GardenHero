@@ -7,21 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492C3E72CCE3F15DD97C19F1 /* Pods_GardenHero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14988903F74F1CF6735EF506 /* Pods_GardenHero.framework */; };
+		D00276E32324E0940026E3DB /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00276E22324E0940026E3DB /* TestViewController.swift */; };
+		D00B682F230F9904006EC699 /* PlantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B682E230F9904006EC699 /* PlantListViewController.swift */; };
+		D00B6831230FAA1A006EC699 /* PlantInforViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B6830230FAA1A006EC699 /* PlantInforViewController.swift */; };
+		D00B6833230FABE2006EC699 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B6832230FABE2006EC699 /* Plant.swift */; };
+		D00B6835230FB32C006EC699 /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B6834230FB32C006EC699 /* PlantTableViewCell.swift */; };
+		D00B6AA82312C007006EC699 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B6AA72312C007006EC699 /* ImageCollectionViewCell.swift */; };
+		D0340BC923287558008D2CAA /* HarvestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0340BC823287558008D2CAA /* HarvestViewController.swift */; };
+		D0340BCB2328839E008D2CAA /* HarvestScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0340BCA2328839E008D2CAA /* HarvestScore.swift */; };
+		D0427628230C056400BBEA94 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0427627230C056400BBEA94 /* Weather.swift */; };
+		D05A08BF2330CCF7004D1AA5 /* UIext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A08BE2330CCF7004D1AA5 /* UIext.swift */; };
 		D073E760230B74DB00C39007 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D073E75F230B74DB00C39007 /* AppDelegate.swift */; };
-		D073E762230B74DB00C39007 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D073E761230B74DB00C39007 /* ViewController.swift */; };
+		D073E762230B74DB00C39007 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D073E761230B74DB00C39007 /* HomepageViewController.swift */; };
 		D073E765230B74DB00C39007 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D073E763230B74DB00C39007 /* Main.storyboard */; };
 		D073E767230B74DD00C39007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D073E766230B74DD00C39007 /* Assets.xcassets */; };
 		D073E76A230B74DD00C39007 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D073E768230B74DD00C39007 /* LaunchScreen.storyboard */; };
+		D07FB0852325CFC600D92195 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07FB0842325CFC600D92195 /* AlertService.swift */; };
+		D0970B1F232F0AC80004386E /* DiagnosisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0970B1E232F0AC70004386E /* DiagnosisViewController.swift */; };
+		D0D37E5B233311AE00E4A85A /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D37E5A233311AE00E4A85A /* ResultViewController.swift */; };
+		D0FD879A2329CE1F00707956 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FD87992329CE1F00707956 /* MarketViewController.swift */; };
+		D0FD879C2329D25B00707956 /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FD879B2329D25B00707956 /* Market.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14988903F74F1CF6735EF506 /* Pods_GardenHero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GardenHero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B26B276E97528F96E1AC2A8F /* Pods-GardenHero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GardenHero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GardenHero/Pods-GardenHero.debug.xcconfig"; sourceTree = "<group>"; };
+		D00276E22324E0940026E3DB /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		D00B682E230F9904006EC699 /* PlantListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantListViewController.swift; sourceTree = "<group>"; };
+		D00B6830230FAA1A006EC699 /* PlantInforViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantInforViewController.swift; sourceTree = "<group>"; };
+		D00B6832230FABE2006EC699 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		D00B6834230FB32C006EC699 /* PlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTableViewCell.swift; sourceTree = "<group>"; };
+		D00B6AA72312C007006EC699 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		D0340BC823287558008D2CAA /* HarvestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvestViewController.swift; sourceTree = "<group>"; };
+		D0340BCA2328839E008D2CAA /* HarvestScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvestScore.swift; sourceTree = "<group>"; };
+		D0427627230C056400BBEA94 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		D05A08BE2330CCF7004D1AA5 /* UIext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIext.swift; sourceTree = "<group>"; };
 		D073E75C230B74DB00C39007 /* GardenHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GardenHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D073E75F230B74DB00C39007 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D073E761230B74DB00C39007 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D073E761230B74DB00C39007 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		D073E764230B74DB00C39007 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D073E766230B74DD00C39007 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D073E769230B74DD00C39007 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D073E76B230B74DD00C39007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D07FB0842325CFC600D92195 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		D0970B1E232F0AC70004386E /* DiagnosisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DiagnosisViewController.swift; path = View/DiagnosisViewController.swift; sourceTree = "<group>"; };
+		D0D37E5A233311AE00E4A85A /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		D0FD87992329CE1F00707956 /* MarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
+		D0FD879B2329D25B00707956 /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
+		F77772E98A6C9BC292A12211 /* Pods-GardenHero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GardenHero.release.xcconfig"; path = "Pods/Target Support Files/Pods-GardenHero/Pods-GardenHero.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +63,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				492C3E72CCE3F15DD97C19F1 /* Pods_GardenHero.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CDC67F1BC56BCCA951231B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14988903F74F1CF6735EF506 /* Pods_GardenHero.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D08CC02BBDAF4A41A2F948E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B26B276E97528F96E1AC2A8F /* Pods-GardenHero.debug.xcconfig */,
+				F77772E98A6C9BC292A12211 /* Pods-GardenHero.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D0427626230C054300BBEA94 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0427627230C056400BBEA94 /* Weather.swift */,
+				D00B6832230FABE2006EC699 /* Plant.swift */,
+				D0340BCA2328839E008D2CAA /* HarvestScore.swift */,
+				D0FD879B2329D25B00707956 /* Market.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		D073E753230B74DB00C39007 = {
 			isa = PBXGroup;
 			children = (
 				D073E75E230B74DB00C39007 /* GardenHero */,
 				D073E75D230B74DB00C39007 /* Products */,
+				5D08CC02BBDAF4A41A2F948E /* Pods */,
+				0CDC67F1BC56BCCA951231B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +119,42 @@
 		D073E75E230B74DB00C39007 /* GardenHero */ = {
 			isa = PBXGroup;
 			children = (
-				D073E75F230B74DB00C39007 /* AppDelegate.swift */,
-				D073E761230B74DB00C39007 /* ViewController.swift */,
-				D073E763230B74DB00C39007 /* Main.storyboard */,
-				D073E766230B74DD00C39007 /* Assets.xcassets */,
-				D073E768230B74DD00C39007 /* LaunchScreen.storyboard */,
+				D0427626230C054300BBEA94 /* Model */,
+				D073E772230B752700C39007 /* Controller */,
+				D073E771230B750300C39007 /* View */,
 				D073E76B230B74DD00C39007 /* Info.plist */,
 			);
 			path = GardenHero;
+			sourceTree = "<group>";
+		};
+		D073E771230B750300C39007 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D073E768230B74DD00C39007 /* LaunchScreen.storyboard */,
+				D073E763230B74DB00C39007 /* Main.storyboard */,
+				D073E766230B74DD00C39007 /* Assets.xcassets */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D073E772230B752700C39007 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D00B6AA72312C007006EC699 /* ImageCollectionViewCell.swift */,
+				D073E75F230B74DB00C39007 /* AppDelegate.swift */,
+				D073E761230B74DB00C39007 /* HomepageViewController.swift */,
+				D00B682E230F9904006EC699 /* PlantListViewController.swift */,
+				D00B6830230FAA1A006EC699 /* PlantInforViewController.swift */,
+				D00B6834230FB32C006EC699 /* PlantTableViewCell.swift */,
+				D00276E22324E0940026E3DB /* TestViewController.swift */,
+				D07FB0842325CFC600D92195 /* AlertService.swift */,
+				D0340BC823287558008D2CAA /* HarvestViewController.swift */,
+				D0FD87992329CE1F00707956 /* MarketViewController.swift */,
+				D0970B1E232F0AC70004386E /* DiagnosisViewController.swift */,
+				D05A08BE2330CCF7004D1AA5 /* UIext.swift */,
+				D0D37E5A233311AE00E4A85A /* ResultViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +164,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D073E76E230B74DD00C39007 /* Build configuration list for PBXNativeTarget "GardenHero" */;
 			buildPhases = (
+				BF1104781BD2F79B8C1BD7D8 /* [CP] Check Pods Manifest.lock */,
 				D073E758230B74DB00C39007 /* Sources */,
 				D073E759230B74DB00C39007 /* Frameworks */,
 				D073E75A230B74DB00C39007 /* Resources */,
+				975CF6BDD2E7554E60B5025A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -106,6 +201,7 @@
 			knownRegions = (
 				en,
 				Base,
+				English,
 			);
 			mainGroup = D073E753230B74DB00C39007;
 			productRefGroup = D073E75D230B74DB00C39007 /* Products */;
@@ -130,13 +226,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		975CF6BDD2E7554E60B5025A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GardenHero/Pods-GardenHero-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CZPicker/CZPicker.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/LLCycleScrollView/LLCycleScrollView.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSocket/SwiftSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CZPicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLCycleScrollView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GardenHero/Pods-GardenHero-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF1104781BD2F79B8C1BD7D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GardenHero-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D073E758230B74DB00C39007 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D073E762230B74DB00C39007 /* ViewController.swift in Sources */,
+				D00B6831230FAA1A006EC699 /* PlantInforViewController.swift in Sources */,
+				D00B6833230FABE2006EC699 /* Plant.swift in Sources */,
+				D00B6AA82312C007006EC699 /* ImageCollectionViewCell.swift in Sources */,
+				D00B6835230FB32C006EC699 /* PlantTableViewCell.swift in Sources */,
+				D0FD879A2329CE1F00707956 /* MarketViewController.swift in Sources */,
+				D05A08BF2330CCF7004D1AA5 /* UIext.swift in Sources */,
+				D07FB0852325CFC600D92195 /* AlertService.swift in Sources */,
+				D0427628230C056400BBEA94 /* Weather.swift in Sources */,
+				D0D37E5B233311AE00E4A85A /* ResultViewController.swift in Sources */,
+				D073E762230B74DB00C39007 /* HomepageViewController.swift in Sources */,
+				D0970B1F232F0AC80004386E /* DiagnosisViewController.swift in Sources */,
+				D00B682F230F9904006EC699 /* PlantListViewController.swift in Sources */,
+				D0FD879C2329D25B00707956 /* Market.swift in Sources */,
+				D00276E32324E0940026E3DB /* TestViewController.swift in Sources */,
 				D073E760230B74DB00C39007 /* AppDelegate.swift in Sources */,
+				D0340BCB2328839E008D2CAA /* HarvestScore.swift in Sources */,
+				D0340BC923287558008D2CAA /* HarvestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,16 +444,20 @@
 		};
 		D073E76F230B74DD00C39007 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B26B276E97528F96E1AC2A8F /* Pods-GardenHero.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DTYAB5ULA4;
 				INFOPLIST_FILE = GardenHero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Monash.GardenHero;
+				PRODUCT_BUNDLE_IDENTIFIER = Summer.GardenHero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -297,16 +465,20 @@
 		};
 		D073E770230B74DD00C39007 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F77772E98A6C9BC292A12211 /* Pods-GardenHero.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DTYAB5ULA4;
 				INFOPLIST_FILE = GardenHero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Monash.GardenHero;
+				PRODUCT_BUNDLE_IDENTIFIER = Summer.GardenHero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

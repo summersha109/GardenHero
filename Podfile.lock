@@ -1,0 +1,46 @@
+PODS:
+  - Alamofire (4.8.2)
+  - CZPicker (0.4.3)
+  - Kingfisher (5.7.1)
+  - LLCycleScrollView (1.6.0):
+    - Kingfisher
+  - Realm (3.17.3):
+    - Realm/Headers (= 3.17.3)
+  - Realm/Headers (3.17.3)
+  - RealmSwift (3.17.3):
+    - Realm (= 3.17.3)
+  - SwiftSocket (2.0.2)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - CZPicker (~> 0.4)
+  - LLCycleScrollView
+  - RealmSwift
+  - SwiftSocket (~> 2.0)
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - CZPicker
+    - Kingfisher
+    - LLCycleScrollView
+    - Realm
+    - RealmSwift
+    - SwiftSocket
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  CZPicker: 55aa1751ea26e209814552da1a9a08cba8bbf72a
+  Kingfisher: 176d377ad339113c99ad4980cbae687f807e20fe
+  LLCycleScrollView: a08f666671f9fd1a205df9defebc3c217d59abc8
+  Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
+  RealmSwift: b7fdc2d18616621c31df5c7a398a45a2163f8eb0
+  SwiftSocket: 6f4c9c63fbc5c1d61188936bb3c599fd546f40ae
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: ee412268c2e23ccea385a198c437f928e43c6a94
+
+COCOAPODS: 1.5.2
