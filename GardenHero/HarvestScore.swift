@@ -13,3 +13,16 @@ class HarvestScore: Object {
     @objc dynamic var score = 0
     @objc dynamic var co2 = 0
 }
+
+class StartPlant: Object {
+    @objc dynamic var plantName: String = ""
+    @objc dynamic var startDate: String = ""
+    @objc dynamic var harvestDay: Int = 0
+    @objc dynamic var harvestDate: String = ""
+}
+
+class FinishPlant: Object {
+    @objc dynamic var plantName: String = ""
+}
+
+

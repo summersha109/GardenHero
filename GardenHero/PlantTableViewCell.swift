@@ -13,6 +13,8 @@ class PlantTableViewCell: UITableViewCell {
     @IBOutlet weak var plantLabel: UILabel!
     @IBOutlet weak var plantImage: UIImageView!
     @IBOutlet weak var foodMile: UILabel!
+    
+    @IBOutlet weak var startPlantBtn: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

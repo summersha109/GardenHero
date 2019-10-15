@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		492C3E72CCE3F15DD97C19F1 /* Pods_GardenHero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14988903F74F1CF6735EF506 /* Pods_GardenHero.framework */; };
 		D00276E32324E0940026E3DB /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00276E22324E0940026E3DB /* TestViewController.swift */; };
+		D006D425233F930500D71C43 /* StartPlantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D006D424233F930500D71C43 /* StartPlantTableViewController.swift */; };
+		D006D427233F9A1900D71C43 /* StartPlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D006D426233F9A1900D71C43 /* StartPlantTableViewCell.swift */; };
+		D006D429233F9A2A00D71C43 /* FinishPlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D006D428233F9A2A00D71C43 /* FinishPlantTableViewCell.swift */; };
 		D00B682F230F9904006EC699 /* PlantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B682E230F9904006EC699 /* PlantListViewController.swift */; };
 		D00B6831230FAA1A006EC699 /* PlantInforViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B6830230FAA1A006EC699 /* PlantInforViewController.swift */; };
 		D00B6833230FABE2006EC699 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B6832230FABE2006EC699 /* Plant.swift */; };
@@ -34,6 +37,9 @@
 		14988903F74F1CF6735EF506 /* Pods_GardenHero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GardenHero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B26B276E97528F96E1AC2A8F /* Pods-GardenHero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GardenHero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GardenHero/Pods-GardenHero.debug.xcconfig"; sourceTree = "<group>"; };
 		D00276E22324E0940026E3DB /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		D006D424233F930500D71C43 /* StartPlantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPlantTableViewController.swift; sourceTree = "<group>"; };
+		D006D426233F9A1900D71C43 /* StartPlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPlantTableViewCell.swift; sourceTree = "<group>"; };
+		D006D428233F9A2A00D71C43 /* FinishPlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishPlantTableViewCell.swift; sourceTree = "<group>"; };
 		D00B682E230F9904006EC699 /* PlantListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantListViewController.swift; sourceTree = "<group>"; };
 		D00B6830230FAA1A006EC699 /* PlantInforViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantInforViewController.swift; sourceTree = "<group>"; };
 		D00B6832230FABE2006EC699 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
@@ -43,7 +49,7 @@
 		D0340BCA2328839E008D2CAA /* HarvestScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvestScore.swift; sourceTree = "<group>"; };
 		D0427627230C056400BBEA94 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		D05A08BE2330CCF7004D1AA5 /* UIext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIext.swift; sourceTree = "<group>"; };
-		D073E75C230B74DB00C39007 /* GardenHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GardenHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D073E75C230B74DB00C39007 /* O Ma Garden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "O Ma Garden.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D073E75F230B74DB00C39007 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D073E761230B74DB00C39007 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		D073E764230B74DB00C39007 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,7 +117,7 @@
 		D073E75D230B74DB00C39007 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D073E75C230B74DB00C39007 /* GardenHero.app */,
+				D073E75C230B74DB00C39007 /* O Ma Garden.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,9 +148,12 @@
 			children = (
 				D00B6AA72312C007006EC699 /* ImageCollectionViewCell.swift */,
 				D073E75F230B74DB00C39007 /* AppDelegate.swift */,
+				D006D426233F9A1900D71C43 /* StartPlantTableViewCell.swift */,
+				D006D428233F9A2A00D71C43 /* FinishPlantTableViewCell.swift */,
 				D073E761230B74DB00C39007 /* HomepageViewController.swift */,
 				D00B682E230F9904006EC699 /* PlantListViewController.swift */,
 				D00B6830230FAA1A006EC699 /* PlantInforViewController.swift */,
+				D006D424233F930500D71C43 /* StartPlantTableViewController.swift */,
 				D00B6834230FB32C006EC699 /* PlantTableViewCell.swift */,
 				D00276E22324E0940026E3DB /* TestViewController.swift */,
 				D07FB0842325CFC600D92195 /* AlertService.swift */,
@@ -160,9 +169,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D073E75B230B74DB00C39007 /* GardenHero */ = {
+		D073E75B230B74DB00C39007 /* O Ma Garden */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D073E76E230B74DD00C39007 /* Build configuration list for PBXNativeTarget "GardenHero" */;
+			buildConfigurationList = D073E76E230B74DD00C39007 /* Build configuration list for PBXNativeTarget "O Ma Garden" */;
 			buildPhases = (
 				BF1104781BD2F79B8C1BD7D8 /* [CP] Check Pods Manifest.lock */,
 				D073E758230B74DB00C39007 /* Sources */,
@@ -174,9 +183,9 @@
 			);
 			dependencies = (
 			);
-			name = GardenHero;
+			name = "O Ma Garden";
 			productName = GardenHero;
-			productReference = D073E75C230B74DB00C39007 /* GardenHero.app */;
+			productReference = D073E75C230B74DB00C39007 /* O Ma Garden.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -208,7 +217,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D073E75B230B74DB00C39007 /* GardenHero */,
+				D073E75B230B74DB00C39007 /* O Ma Garden */,
 			);
 		};
 /* End PBXProject section */
@@ -291,15 +300,18 @@
 				D0FD879A2329CE1F00707956 /* MarketViewController.swift in Sources */,
 				D05A08BF2330CCF7004D1AA5 /* UIext.swift in Sources */,
 				D07FB0852325CFC600D92195 /* AlertService.swift in Sources */,
+				D006D425233F930500D71C43 /* StartPlantTableViewController.swift in Sources */,
 				D0427628230C056400BBEA94 /* Weather.swift in Sources */,
 				D0D37E5B233311AE00E4A85A /* ResultViewController.swift in Sources */,
 				D073E762230B74DB00C39007 /* HomepageViewController.swift in Sources */,
+				D006D427233F9A1900D71C43 /* StartPlantTableViewCell.swift in Sources */,
 				D0970B1F232F0AC80004386E /* DiagnosisViewController.swift in Sources */,
 				D00B682F230F9904006EC699 /* PlantListViewController.swift in Sources */,
 				D0FD879C2329D25B00707956 /* Market.swift in Sources */,
 				D00276E32324E0940026E3DB /* TestViewController.swift in Sources */,
 				D073E760230B74DB00C39007 /* AppDelegate.swift in Sources */,
 				D0340BCB2328839E008D2CAA /* HarvestScore.swift in Sources */,
+				D006D429233F9A2A00D71C43 /* FinishPlantTableViewCell.swift in Sources */,
 				D0340BC923287558008D2CAA /* HarvestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,11 +463,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DTYAB5ULA4;
 				INFOPLIST_FILE = GardenHero/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Summer.GardenHero;
+				PRODUCT_BUNDLE_IDENTIFIER = Summers.GardenHero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -472,11 +485,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DTYAB5ULA4;
 				INFOPLIST_FILE = GardenHero/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Summer.GardenHero;
+				PRODUCT_BUNDLE_IDENTIFIER = Summers.GardenHero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -496,7 +510,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D073E76E230B74DD00C39007 /* Build configuration list for PBXNativeTarget "GardenHero" */ = {
+		D073E76E230B74DD00C39007 /* Build configuration list for PBXNativeTarget "O Ma Garden" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D073E76F230B74DD00C39007 /* Debug */,

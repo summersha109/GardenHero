@@ -132,7 +132,9 @@ class PlantInforViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         scrollView.delegate = self
         
-        
+        scrollView.alwaysBounceVertical = false
+        scrollView.alwaysBounceHorizontal = false
+        scrollView.bounces = false
         if let plantName = plantName, let description = descrption, let sun = sun, let soil = soil, let water = water, let whenToPlant = whenToPlant, let howToPlant = howToPlant, let harveTime = harveTime, let harvest = harvest, let spacing = spacing, let feeding = feeding, let pests = pests, let otherCare = otherCare{
             plantImage.image = UIImage(named: plantName)
             plantNameLabel.text = plantName
@@ -174,18 +176,18 @@ class PlantInforViewController: UIViewController, UIScrollViewDelegate {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
     
     override func viewWillAppear(_ animated: Bool) {
-         scrollView.bounces = false
+         scrollView.alwaysBounceVertical = false
+        scrollView.alwaysBounceHorizontal = false
+        scrollView.bounces = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        scrollView.alwaysBounceVertical = false
+        scrollView.alwaysBounceHorizontal = false
+        scrollView.bounces = false
     }
 
 }

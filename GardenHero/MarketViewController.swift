@@ -8,6 +8,8 @@
 
 import UIKit
 import MapKit
+import SwiftSocket
+import SwiftyJSON
 
 class MarketViewController: UIViewController, CLLocationManagerDelegate{
 
@@ -15,12 +17,15 @@ class MarketViewController: UIViewController, CLLocationManagerDelegate{
     let locationManager = CLLocationManager()
     var currentCoordinate: CLLocationCoordinate2D?
     var marketAnnotations: [Market] = []
+    let client = TCPClient(address: "3.104.105.21", port: 9999)
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
         marketMapView.delegate = self
 
         configureLocationServices()
+        
+        
         
         addAnnotations()
         focusLocation(coordinate: CLLocationCoordinate2D(latitude: -37.876823,  longitude: 145.045837))
@@ -52,7 +57,7 @@ class MarketViewController: UIViewController, CLLocationManagerDelegate{
     
     
     func focusLocation(coordinate: CLLocationCoordinate2D) {
-        let zoomRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+        let zoomRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 8000, longitudinalMeters: 8000)
         marketMapView.setRegion(marketMapView.regionThatFits(zoomRegion), animated: true)
         
     }
@@ -63,7 +68,6 @@ class MarketViewController: UIViewController, CLLocationManagerDelegate{
             addAnnotations()
         }
         currentCoordinate = latestLocation.coordinate
-       
         
     }
     
@@ -75,6 +79,11 @@ class MarketViewController: UIViewController, CLLocationManagerDelegate{
             beginLocationUpdates(locationManger: manager)
         }
     }
+    
+    @IBAction func myLocationBtn(_ sender: Any) {
+        focusLocation(coordinate: currentCoordinate!).self;
+    }
+    
     var currentPlacemark: CLPlacemark?
     func addAnnotations(){
         addMarket()
@@ -117,6 +126,57 @@ class MarketViewController: UIViewController, CLLocationManagerDelegate{
             
             
         }
+    }
+    
+    func connectServer(request: String){
+        switch client.connect(timeout: 10) {
+        case .success:
+            print("success")
+            switch client.send(string: request ) {
+            case .success:
+                var response: String = ""
+                while true{
+                    let data = client.read(1024,timeout: 10)
+                    
+                    if data != nil {
+                        
+                        response = response + String(bytes: data!, encoding: .utf8)!
+                        
+                    } else {
+                        break
+                    }
+                    
+                }
+                
+                if response != nil {
+                    if let data = response.data(using: .utf8) {
+                        if let json = try? JSON(data: data) {
+                            var i = 0
+                            for (index,subJson):(String, JSON) in json {
+                                createMarketList(jsonArrary: json, indext: i, request: request)
+                                i+=1
+                            }
+                        }
+                        
+                    }
+                    
+                }
+            case .failure(let error):
+                print(error)
+            }
+        case .failure(let error):
+            print(error)
+        }
+        
+    }
+    
+     func createMarketList(jsonArrary: JSON, indext: Int, request: String){
+        marketAnnotations.append(Market(
+            newTitle: jsonArrary[indext]["name"].stringValue,
+            newSubtitle: "Address: \(jsonArrary[indext]["address"].stringValue), Opening: \(jsonArrary[indext]["openning_hours"].stringValue)",
+            lat: -37.2852915,
+            long: 142.9307639))
+        
     }
     
     

@@ -16,7 +16,20 @@ extension UIViewController{
         // UIAlertController manages an alert instance
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default,handler: nil))
+        
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showSimpleAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message,         preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default,handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Make Sure",
+                                      style: UIAlertAction.Style.default,
+                                      handler: {(_: UIAlertAction!) in
+                                        //Sign out action
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

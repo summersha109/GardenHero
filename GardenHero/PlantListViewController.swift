@@ -10,6 +10,7 @@ import UIKit
 import SwiftSocket
 import SwiftyJSON
 import CZPicker
+import RealmSwift
 
 class PlantListViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate{
     
@@ -20,6 +21,8 @@ class PlantListViewController: UIViewController,UITableViewDataSource, UITableVi
     
     @IBOutlet weak var selectBtn: UIButton!
     
+    let realm = try! Realm()
+   
     var plants : [Plant] = []
     
     var filterPlants: [Plant] = []
@@ -104,7 +107,9 @@ class PlantListViewController: UIViewController,UITableViewDataSource, UITableVi
             } else if searchBar.selectedScopeButtonIndex == 1{
                 selectBtn.isHidden = false
                 filterPlants = allPlant
+                
                 plantTableView.reloadData()
+                
             }
         }
         else{
@@ -116,27 +121,7 @@ class PlantListViewController: UIViewController,UITableViewDataSource, UITableVi
     }
 
     
-//    func filterTableView(ind:Int, text: String){
-//        switch ind {
-//        case 0:
-//            filterPlants = plants.filter({(plant) -> Bool in
-//                return plant.name.lowercased().contains(text.lowercased())
-//            })
-//            plantTableView.reloadData()
-//        case 1:
-//            filterPlants = allPlant.filter({(plant) -> Bool in
-//                return plant.name.lowercased().contains(text.lowercased())
-//            })
-//            plantTableView.reloadData()
-//        default:
-//            break
-//        }
-//    }
-    
-    // Press segenment button, what will present
-//    @IBAction func segmentedChange(_ sender: Any) {
-//        plantTableView.reloadData()
-//    }
+
     
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text?.lowercased(), searchText.count > 0{
@@ -158,26 +143,8 @@ class PlantListViewController: UIViewController,UITableViewDataSource, UITableVi
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return filterPlants.count
-//        switch  segmentedConrol.selectedSegmentIndex {
-//        case 0:
-//            selectBtn.isHidden = true
-//
-//            return plants.count
-//        case 1:
-//            selectBtn.isHidden = false
-//            searchController.searchResultsUpdater = self
-//            searchController.obscuresBackgroundDuringPresentation = false
-//            searchController.searchBar.placeholder = "Search Plants"
-//
-//
-//            navigationItem.searchController = searchController
-//            definesPresentationContext = true
-//            return allPlant.count
-//        default:
-//            break
-//        }
-//        return 0
     }
     
     // Multiple item picker
@@ -196,24 +163,72 @@ class PlantListViewController: UIViewController,UITableViewDataSource, UITableVi
     
     
     
+    @IBAction func startToPlantBtn(_ sender: UIButton) {
+       
+        let row = sender.tag
+        let startPlantName = filterPlants[row].name
+        let harvestDate = getHarvest(request: startPlantName)
+        let futureDay = harvestDate.asDate
+        let date = Date.getCurrentDate()
+        let harvest = futureDay.daysSinceNow.day!
+       
+       
+        let alert = UIAlertController(title: "Notice", message: "Are you sure to start to plant \(startPlantName) at \(date)",         preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default,handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Confirm",
+                                      style: UIAlertAction.Style.default,
+                                      handler: {(_: UIAlertAction!) in
+                                   self.displayMessage(title: "Success", message: "Your plant has been added in the list")
+                                        let startToPlant = StartPlant()
+                                       startToPlant.plantName = startPlantName
+                                        startToPlant.startDate = date
+                                        startToPlant.harvestDay = harvest
+                                        startToPlant.harvestDate = harvestDate
+                                        
+                                        do{
+                                            try self.realm.write{
+                                                self.realm.add(startToPlant)
+                                            }
+                                           
+                                        }catch{
+                                            print(error)
+                                        }
+       
+        }))
+       
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+   
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "fruitCell", for: indexPath) as? PlantTableViewCell else {
             return UITableViewCell()
             
         }
-        //if segmentedConrol.selectedSegmentIndex == 0 {
             cell.plantImage.image = UIImage(named:filterPlants[indexPath.row].name)
             cell.plantLabel.text = filterPlants[indexPath.row].name
             cell.foodMile.text = "Food Mile Score: \(filterPlants[indexPath.row].foodMile)"
-//        } else if segmentedConrol.selectedSegmentIndex == 1 {
-//            cell.plantImage.image = UIImage(named:allPlant[indexPath.row].name)
-//            cell.plantLabel.text = allPlant[indexPath.row].name
-//            cell.foodMile.text = "Food Mile Score: \(allPlant[indexPath.row].foodMile)"
-//        }
+       
+           
+                cell.startPlantBtn.tag = indexPath.row
+                cell.startPlantBtn.addTarget(self, action: #selector(startToPlantBtn), for: .touchUpInside)
+        
+        if filterPlants.count == 28 {
+             cell.startPlantBtn.isHidden = true
+        } else {
+            cell.startPlantBtn.isHidden = false
+        }
         
         
         
+        
+
         return cell
         
     }
@@ -264,43 +279,43 @@ class PlantListViewController: UIViewController,UITableViewDataSource, UITableVi
        
     }
     
+    func getHarvest(request: String) -> String {
+        var result: String?
+        switch client.connect(timeout: 10) {
+        case .success:
+            print("success")
+            switch client.send(string: request ) {
+            case .success:
+                var response: String = ""
+                while true{
+                    let data = self.client.read(1024,timeout: 10)
+                    if data != nil {
+                        
+                        response = response + String(bytes: data!, encoding: .utf8)!
+                        result = response
+                        
+                    } else {
+                        
+                        break
+                    }
+                }
+            case .failure(let error):
+                print(error)
+            }
+        case .failure(let error):
+            print(error)
+        }
+        
+        return result!
+        
+    }
+    
+    
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? PlantInforViewController{
-            
-//            if !searchController.isActive, segmentedConrol.selectedSegmentIndex == 0{
-//                let indexPath = self.plantTableView.indexPathForSelectedRow
-//                controller.plantName = plants[indexPath!.row].name
-//                controller.descrption = plants[indexPath!.row].description
-//                controller.sun = plants[indexPath!.row].optimalSun
-//                controller.soil = plants[indexPath!.row].optimalSoil
-//                controller.water = plants[indexPath!.row].watring
-//                controller.whenToPlant = plants[indexPath!.row].whenToPlant
-//                controller.howToPlant = "\(plants[indexPath!.row].growingFromSeed) \(plants[indexPath!.row].transPlanting) \(plants[indexPath!.row].spacing)"
-//                controller.harveTime = plants[indexPath!.row].harvestTime
-//                controller.harvest = plants[indexPath!.row].harvesting
-//                controller.spacing = plants[indexPath!.row].spacing
-//                controller.feeding = plants[indexPath!.row].feeding
-//                controller.pests = plants[indexPath!.row].diseases
-//                controller.otherCare = plants[indexPath!.row].otherCare
-//            } else if !searchController.isActive, segmentedConrol.selectedSegmentIndex == 1{
-//                let indexPath = self.plantTableView.indexPathForSelectedRow
-//                controller.plantName = allPlant[indexPath!.row].name
-//                controller.descrption = allPlant[indexPath!.row].description
-//                controller.sun = allPlant[indexPath!.row].optimalSun
-//                controller.soil = allPlant[indexPath!.row].optimalSoil
-//                controller.water = allPlant[indexPath!.row].watring
-//                controller.whenToPlant = allPlant[indexPath!.row].whenToPlant
-//                controller.howToPlant = "\(allPlant[indexPath!.row].growingFromSeed) \(allPlant[indexPath!.row].transPlanting) \(allPlant[indexPath!.row].spacing)"
-//                controller.harveTime = allPlant[indexPath!.row].harvestTime
-//                controller.harvest = allPlant[indexPath!.row].harvesting
-//                controller.spacing = allPlant[indexPath!.row].spacing
-//                controller.feeding = allPlant[indexPath!.row].feeding
-//                controller.pests = allPlant[indexPath!.row].diseases
-//                controller.otherCare = allPlant[indexPath!.row].otherCare
-//            }
-//            else  {
             let indexPath = self.plantTableView.indexPathForSelectedRow
         controller.plantName = filterPlants[indexPath!.row].name
         controller.descrption = filterPlants[indexPath!.row].description
@@ -315,52 +330,11 @@ class PlantListViewController: UIViewController,UITableViewDataSource, UITableVi
         controller.feeding = filterPlants[indexPath!.row].feeding
         controller.pests = filterPlants[indexPath!.row].diseases
         controller.otherCare = filterPlants[indexPath!.row].otherCare
-            
         }
         
     }
     
-    func testAllPlant(){
-        allPlant.append(Plant(
-            name: "Apple" ,
-            description: "apple",
-            optimalSun: "apple",
-            optimalSoil: "apple",
-            plantingConsiderations:"apple" ,
-            whenToPlant: "apple",
-            growingFromSeed:"apple" ,
-            transPlanting:"apple" ,
-            spacing:"apple" ,
-            watring:"apple" ,
-            feeding:"apple" ,
-            
-            harvestTime:"apple" ,
-            harvesting:"apple" ,
-            otherCare:"apple" ,
-            diseases: "apple",
-            peasts:"apple" ,
-            foodMile:"apple" ))
-        allPlant.append(Plant(
-            name: "Banana" ,
-            description: "apple",
-            optimalSun: "apple",
-            optimalSoil: "apple",
-            plantingConsiderations:"apple" ,
-            whenToPlant: "apple",
-            growingFromSeed:"apple" ,
-            transPlanting:"apple" ,
-            spacing:"apple" ,
-            watring:"apple" ,
-            feeding:"apple" ,
-            
-            harvestTime:"apple" ,
-            harvesting:"apple" ,
-            otherCare:"apple" ,
-            diseases: "apple",
-            peasts:"apple" ,
-            foodMile:"apple" ))
-        
-    }
+   
     
     
     func createPlantList(jsonArrary: JSON, indext: Int, request: String){
@@ -451,6 +425,19 @@ extension PlantListViewController: CZPickerViewDelegate, CZPickerViewDataSource{
         connectServer(request: month!)
          filterPlants = allPlant
         plantTableView.reloadData()
+        
+    }
+}
+
+extension Date {
+    
+    static func getCurrentDate() -> String {
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        
+        return dateFormatter.string(from: Date())
         
     }
 }
